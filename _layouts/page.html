@@ -1,5 +1,29 @@
----
-layout: default
----
-{% include JB/setup %}
-{% include themes/twitter/page.html %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>About Sean</title>
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+  </head>
+  <body style="padding:80px">
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+      <a class="brand" href="index.html"> Searke's Blog </a>
+      <div class ="nav-collapse collapse">
+        <ul class="nav">
+          <li><a href="#posts">Posts</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+    {{content}}
+
+  </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

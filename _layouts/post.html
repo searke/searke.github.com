@@ -1,5 +1,39 @@
----
-layout: default
----
-{% include JB/setup %}
-{% include themes/twitter/post.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Searke's Blog</title>
+<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css"/>
+</head>
+
+<body style="padding:80px">
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+    <a class="brand" href="../../../index.html"> Searke's Blog </a>
+    <div class ="nav-collapse collapse">
+      <ul class="nav">
+        <li class="active"><a href="#">Posts</a></li>
+      </ul>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+
+  {{content}}
+
+</div>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+
+MathJax.Hub.Config({
+    jax: ["input/TeX","output/HTML-CSS"],
+    displayAlign: "left"
+});
+</script>
+
+<script src="../../../bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
