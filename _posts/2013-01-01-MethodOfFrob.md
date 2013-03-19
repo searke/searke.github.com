@@ -13,22 +13,14 @@ Fortunately, computer algebra makes this significantly less error prone and tedi
 
 ## Overview
 
-As a first step, assume that the function satifying the equation has the form:
+As a first step, assume that the function, say \\(f\\), which satifies the equation has the form:
 
-$$ \sum \_{i=0}^{\infty} a(i)\,x^{i} $$
+$$ f(x) = \sum \_{i=0}^{\infty} a(i)\,x^{i} $$
 
-Here a(i) is ith coefficient of the power series. Our goal is to find a definition for a(i).
+Here\\(a(i)\\) is ith coefficient of the power series. Our goal is to find a definition for \\(a(i)\\) for each \\(i\\).
 
-To do this, we rearrange the equation so that we have some power series equal to zero:
+To do this, replace \\(f\\) with the sum. In many cases, we can rearrange the equation in a way to solve for the values of \\(a(i)\\).
 
-$$ \sum \_{i=0}^{\infty} coeff(i)\,x^i =0 $$
-
-Because the sum equals zero, each of the coefficients of the powers of x must be equal to 0. So we have that
-
-coeff(i)=0 for i = 1,2,3...
-
-With this formula, we can either directly solve for the coefficients of the power series, a(i) or we can create a reccurrence relation describing their values.
- 
 -----
 ## A Simple Differential Equation
 Consider this basic differential equation:
@@ -39,20 +31,23 @@ Replacing \\(y(x)\\) with \\(\sum \_{i=0}^{\infty} a(i)\, x^i\\) gives us this e
 
 $$\sum \_{i=0}^{\infty } i\, a(i) \, x^{i-1}+\sum \_{i=0}^{\infty } a(i) \, x^i = 0 $$
 
+Combine all the summations together. This requires playing with the index of summation.
+
 $$ \sum \_{i=0}^{\infty } (i+1)\, a(i+1)\, x^{i}+\sum \_{i=0}^{\infty } a(i) \, x^i = 0 $$
 
 $$ \sum \_{i=0}^{\infty } ((i+1)\, a(i+1)\,+ a(i))\, x^i = 0 $$
 
-Each coefficient of the power series must be equal to zero because the power series is equal to zero. So we have for each i:
+Each coefficient of the power series must be equal to zero because the power series is equal to zero. So we have for each \\(i\\):
 
 $$ (i+1)\, a(i+1)\,+ a(i) = 0 $$
+
 Giving us the reccurence relation: $$ a(i+1) = - \frac{a(i)}{i+1} $$
 
-This reccurence relation is solvable. The formula for the ith coefficient is:
+This reccurence relation is solvable and the formula for the ith coefficient is:
 
 $$ a(i) = (-1)^{i-1} \frac{-a(0)}{i!} $$
 
-So, the function satisfying the differential equation is of the form:
+So, the function satisfying the differential equation is equal to this infinite summation:
 
 $$ \sum \_{i=0}^{\infty } (-1)^{i-1} \frac{-a(0)}{i!}\,x^i $$
 
@@ -64,7 +59,7 @@ $$ a(0)\, e^{-x} $$
 
 $$ y'(x)+y(x)+\cos (x)=0 $$
 
-Expand cosine as a Taylor series.
+To solve this, it is important to have \\(cos\\) expression as a Taylor series.
 
 $$ \cos (x) = \sum \_{n=0}^{\infty } \frac{(-1)^n\, x^{2 n}}{(2 n)!} $$
 
@@ -106,13 +101,18 @@ This method allows works on some simple functional equations like the one below.
 
 $$ f(x) + f(2x) = \sin(x) $$
 
+Replace \\(f\\) with an infinite sum and replace \\(sin\\) with a Taylor series. Then combine them all.
+
 $$ \sum \_{n=0}^{\infty } a(n) \, x^n+\sum \_{n=0}^{\infty } a(n) \, 2^n
    \, x^n- \sum \_{n=0}^{\infty } \frac{(n \bmod 2)\, (-1)^{\frac{n+1}{2}+1}\,
    x^n}{n!} $$
 
+The coefficients must be equal to zero as always.
+
 $$ a(n)+2^n a(n)-\frac{(-1)^{1+\frac{1+n}{2}} \, (n \bmod 2)}{n!}=0 $$
 
 $$ a(n)=\frac{(-1)^{1+\frac{1+n}{2}} \, (n \bmod 2)}{\left(1+2^n\right)\, n!} $$
+
 
 $$ f(x) = \sum \_{n=0}^{\infty } \frac{\left((-1)^{1+\frac{1+n}{2}}\, (n \bmod
    2)\right)}{\left(1+2^n\right)\, n!} x^n $$
@@ -121,3 +121,5 @@ To simplify things, subsitute \\(n = 2k+1 \\)  and simplify:
 
 $$ f(x) = \sum \_{k=0}^{\infty } \frac{(-1)^k\, x^{2 k+1}}{\left(1+2^{2
    k+1}\right)\, (2 k+1)!} $$
+
+There doesn't appear to be any way I know of to simplify this equation.
