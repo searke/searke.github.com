@@ -105,7 +105,7 @@ Replace \\(f\\) with an infinite sum and replace \\(sin\\) with a Taylor series.
 
 $$ \sum \_{n=0}^{\infty } a(n) \, x^n+\sum \_{n=0}^{\infty } a(n) \, 2^n
    \, x^n- \sum \_{n=0}^{\infty } \frac{(n \bmod 2)\, (-1)^{\frac{n+1}{2}+1}\,
-   x^n}{n!} $$
+   x^n}{n!} =0 $$
 
 The coefficients must be equal to zero as always.
 

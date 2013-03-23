@@ -3,25 +3,21 @@ layout: page
 ---
 
 ## Work
-I work at Wolfram Research in Champaign, Illinois as a technology engineer. Most of my job involves helping researchers with small bits of their scientific programming projects. I actively program in Mathematica and Python to solve a wide variety of problems in scientific computing.
+I work at Wolfram Research in Champaign, Illinois as a Wolfram Technology Engineer. Most of my job involves helping researchers with small bits of their scientific programming projects. I actively program in Mathematica and Python to solve a wide variety of problems in scientific computing.
 
 I also write a large amount of documentation whenever possible. I'm fanatical about quality for technical writing. 
 
 I have a degree in Mathematics and Computer Science from the University of Illinois. 
 
-<a id="posts"> </a>
-## All Posts
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
 ## About the Blog
 
-I'm using Jekyll and Twitter Bootstrap to make this blog. It's a small hobby I indulge during some of my spare time over weekends. I haven't done anything with the web in a long time, so I'm probably not using either of the tools correctly yet. 
+I'm using Jekyll and Twitter Bootstrap to make this blog. I'ven't done much with web stuff in a long while (except for the minimal amount of wordpress I use when creating documentation). So I'm probably not using either of the tools correctly yet. 
 
 The blog is being hosted on GitHub. You can see what I've written in Jekyll on my profile.
+
+[MathJax](http://www.mathjax.org) renders the mathematical formula on the blog posts. I'm not exactly happy with the how long it takes to render theformulas, but it seems to be the best solution right now.
+
+The font for the blog is Arvo from Google Fonts.
 
 You can still see my really old <a href="http://searke.blogspot.com/">previous blog</a>. I used to have a xanga account as an angsty teenager as well. You cannot see that.
 
