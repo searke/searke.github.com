@@ -129,13 +129,13 @@ This equation doesn't simplify like the others, but this formula may provide use
 
 Short Answer: \\(x^i\\) is the eigenfunction of the operators used the equations used in this article.
 
-In the differential equations, we had the differential operator - let's call it D:  \\(D(y(x)) = \frac{\partial y(x)}{\partial x}\\). In the functional equations we had a "halving" operator, let's call it H: \\(H(y(x)) = y(x/2)\\). Rewriting the equations using these operators, we get:
+In the differential equations, we had the differential operator - let's call it D:  \\(D(y(x)) = \frac{\partial y(x)}{\partial x}\\). In the functional equations we had a "halving" operator - let's call it H: \\(H(y(x)) = y(x/2)\\). Rewriting the equations using these operators, we get:
 
 $$ D(y(x))+y(x)=0 $$
 
 $$ D(y(x))+y(x)+\cos(x)=0 $$
 
-$$ f(x) + H(f(x)) = \sin(X) $$
+$$ f(x) + H(f(x)) = \sin(x) $$
 
 Both of these are linear operators. One of the key take-aways from linear algebra is that linear things are good because they are easy to work with. Linear operators are just like linear functions except that they operate on functions instead of vectors or numbers. Linear operators have eigenfunctions which are defined in same way as eigenvectors are defined for matrices. An operator, \\(O\\), has an eigenfunction, \\(f\\) if we can find applying the operator to the function preserves the function and just multiplies by some value called the eigenvalue, \\(a\\):
 
