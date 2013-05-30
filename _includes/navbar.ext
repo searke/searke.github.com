@@ -1,14 +1,10 @@
+    <div class="header pure-u-1">
+        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
+            <a class="pure-menu-heading" href="">Searke's Blog</a>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-    <a class="brand" href="{{ HOME_PATH }}/index.html"> Searke's Blog </a>
-    <div class ="nav-collapse collapse">
-      <ul class="nav">
-        <li><a href="{{ HOME_PATH }}/posts.html">Posts</a></li>
-      </ul>
+            <ul>
+                <li class="pure-menu-selected"><a href="{{ HOME_PATH }}/index.html">About</a></li>
+                <li><a href="{{ HOME_PATH }}/posts.html">Posts</a></li>
+             </ul>
+        </div>
     </div>
-    </div>
-  </div>
-</div>
-

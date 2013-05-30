@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<meta name='viewport' content='user-scalable=no'>
+<!doctype html>
 <html lang="en">
-  <head>
-    <title>About Sean</title>
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  {% include commoncss.ext %}
+    <title>Searke's blog</title>
+{% include commoncss.ext %}
 
-  </head>
-  <body style="padding:5%; background: url({{ HOME_PATH }}/assets/tiler.jpg) repeat fixed;font-family: 'Arvo', serif; font-weight: 400;">
 
-  {% include navbar.ext %}
+</head>
+<body>
 
-  <div class="container" style="background:white; padding: 2% 5%; border-radius:1em">
 
-    {{content}}
+<div class="content pure-g-r">
+    {% include navbar.ext %}
 
-  </div>
+    <div class="content pure-u-1">
+        <div class="pure-g-r">
+            <div class="pure-u-2-3">
+                {{content}}
+           </div>
+      </div>
+</div>
 
-  {% include commonjavascript.ext %}
+{% include commonjavascript.ext %}
 
-  </body>
+</body>
 </html>
