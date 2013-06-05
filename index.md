@@ -3,7 +3,7 @@ layout: page
 ---
 
 ## Work
-I work at Wolfram Research in Champaign, Illinois as a Wolfram Technology Engineer. Most of my job involves helping researchers with small bits of their scientific programming projects. I actively program in Mathematica and Python to solve a wide variety of problems in scientific computing.
+I work for Wolfram Research in Champaign, Illinois as a Wolfram Technology Engineer. Most of my job involves helping researchers with small bits of their scientific programming projects. I actively program in Mathematica and Python to solve a wide variety of problems in scientific computing.
 
 I also write a large amount of documentation whenever possible. I'm fanatical about quality for technical writing. 
 
@@ -11,7 +11,7 @@ I have a degree in Mathematics and Computer Science from the University of Illin
 
 ## About the Blog
 
-I'm using Jekyll and Twitter Bootstrap to make this blog. I'ven't done much with web stuff in a long while (except for the minimal amount of wordpress I use when creating documentation). So I'm probably not using either of the tools correctly yet. 
+I'm using Jekyll as my static site generator and have recently switched from [bootstrap](http://twitter.github.io/bootstrap/) to [pure](http://purecss.io/) for styling. I'ven't done much with web stuff in a long while (except for the minimal amount of wordpress I use at work).
 
 The blog is being hosted on GitHub. You can see what I've written in Jekyll on my profile.
 
@@ -19,7 +19,7 @@ The blog is being hosted on GitHub. You can see what I've written in Jekyll on m
 
 The font for the blog is Arvo from Google Fonts.
 
-You can still see my really old <a href="http://searke.blogspot.com/">previous blog</a>. I used to have a xanga account as an angsty teenager as well. You cannot see that.
+You can still see my really old <a href="http://searke.blogspot.com/">previous blog</a>. I used to have a xanga account as an angsty teenager as well. You cannot see that becaue it's embarrasing.
 
 ## Pronouncing "Searke"
 The word searke was a nick name I got a long while ago. It's a portmanteau of my first and last name and is pronounced "shark". Here's a graphic to help you remember:
