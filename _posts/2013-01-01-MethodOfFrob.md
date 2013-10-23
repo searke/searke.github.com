@@ -139,7 +139,7 @@ $$ f(x) + H(f(x)) = \sin(x) $$
 
 Both of these are linear operators. One of the key take-aways from linear algebra is that linear things are good because they are easy to work with. Linear operators are just like linear functions except that they operate on functions instead of vectors or numbers. Linear operators have eigenfunctions which are defined in same way as eigenvectors are defined for matrices. An operator, \\(O\\), has an eigenfunction, \\(f\\) if we can find applying the operator to the function preserves the function and just multiplies by some value called the eigenvalue, \\(a\\):
 
-$$ O(f(x)) =  a \\(f(x)\\)
+$$ O(f(x)) =  a \\(f(x)\\) $$
 
 Both of or operators, \\(D\\) and \\(H\\), have \\(x^i\\) as eigenfucntions for values of x^i.
 

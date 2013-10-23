@@ -13,4 +13,8 @@ body {
 .content {
 	padding: 1em 3em;
 }
+
+h1	{
+	line-height: 125%;
+}
 </style>
