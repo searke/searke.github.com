@@ -7,7 +7,7 @@ title: The Method of Frobenius
 -----
 ## Motivation
 
-The method of Frobenius is a powerful tool for solving differntial and functional equations. Many of the "special" functions from applied math like the Bessel or Lengendre functions are defined as a differential equation and then solved using the method. It works by assuming that the solutions are an infinite power series which reduces the problem down to algebra or solving a reccurence relation. 
+The method of Frobenius is a powerful tool for solving differential and functional equations. Many of the "special" functions from applied math like the Bessel or Lengendre functions are defined as a differential equation and then solved using the method. It works by assuming that the solutions are an infinite power series which reduces the problem down to algebra or solving a reccurence relation. 
 
 Solving the resulting algebraic equation or reccurence relation can be tedious. Fortunately, computer algebra systems make using this method less error prone and less painful.
 
