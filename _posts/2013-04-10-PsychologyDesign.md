@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Psychology as a Basis for User Interface Design
+excerpt: A Book Review
 ---
 
 # Psychology as a Basis for User Interface Design

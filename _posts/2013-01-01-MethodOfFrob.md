@@ -1,6 +1,7 @@
 ---
 layout: post
 title: The Method of Frobenius
+excerpt: Solving Differential and Functional Equations with Infinite Series
 ---
 
 # Some Examples of the Method of Frobenius

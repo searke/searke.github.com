@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Hand Evolved Lindenmayer Systems
+excerpt: Making Fractal Art with Evolution
 ---
 
 # Hand Evolved Lindenmayer Systems
