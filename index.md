@@ -28,4 +28,4 @@ You can still see my really old <a href="http://searke.blogspot.com/">previous b
 ## Pronouncing "Searke"
 "Searke" was a nickname I was given a long time ago. It's a portmanteau (and hence is very clever) of my first and last name and is pronounced "shark". Here's a graphic of it I made as a teenager that I was inordinately fond of:
 
-<img src="http://4.bp.blogspot.com/_nn5tlxdDx54/S5_o-oLYilI/AAAAAAAAACM/9Ahj7s6hE_Q/S1600-R/flowRoot2434.png"
+<img src="http://4.bp.blogspot.com/_nn5tlxdDx54/S5_o-oLYilI/AAAAAAAAACM/9Ahj7s6hE_Q/S1600-R/flowRoot2434.png"/>
