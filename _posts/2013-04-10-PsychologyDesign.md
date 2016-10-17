@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Psychology as a Basis for User Interface Design
-excerpt: A Book Review
+excerpt: UI Design Isn't A Hard Science 
 ---
 
 # Psychology as a Basis for User Interface Design
