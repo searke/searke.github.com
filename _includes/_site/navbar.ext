@@ -1,0 +1,9 @@
+    <div class="header pure-u-1">
+        <div class="pure-menu pure-menu-horizontal">
+            <a class="pure-menu-heading pure-menu-link" href=""><img src="{{ site.url }}/assets/logo.svg" height=55></a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a class="pure-menu-link" href="{{ HOME_PATH }}/index.html">About</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="{{ HOME_PATH }}/posts.html">Posts</a></li>
+             </ul>
+        </div>
+    </div>

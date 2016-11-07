@@ -1,0 +1,20 @@
+<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/pure-min.css">
+
+<style type="text/css">
+
+body {
+	margin: 0 auto;
+	line-height: 1.7em;
+	font-family : 'Arvo', serif;
+	font-weight: 400;
+}
+
+.content {
+	padding: 1em 3em;
+}
+
+h1	{
+	line-height: 125%;
+}
+</style>

@@ -8,10 +8,13 @@ I work for [Wolfram Research](http://www.wolfram.com). See more about my job on 
 
 I have a degree in Mathematics and Computer Science from the University of Illinois. 
 
+-----
 
 ## Other Content
 
 I appreciate [wild flora](https://www.instagram.com/chicagoweeds/) in Chicago's parks and alleys. 
+
+-----
 
 ## About the Blog
 
@@ -24,6 +27,8 @@ The blog is being hosted on GitHub. You can see what I've written in Jekyll on m
 The font for the blog is Arvo from Google Fonts.
 
 You can still see my really old <a href="http://searke.blogspot.com/">previous blog</a>. It's kinda embarrasing but I haven't taken it down. I also used to have a xanga account as an angsty highschooler. But even I don't allow myself to read that. 
+
+-----
 
 ## Pronouncing "Searke"
 "Searke" was a nickname I was given a long time ago. It's a portmanteau (and hence is very clever) of my first and last name and is pronounced "shark". Here's a graphic of it I made as a teenager that I was inordinately fond of:
