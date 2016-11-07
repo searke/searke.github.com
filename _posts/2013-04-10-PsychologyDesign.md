@@ -15,7 +15,7 @@ Soft sciences and pseudo-sciences alike love to claim that they are founded on h
 These kinds of claims also provide a coherent mythology for origins of the field at the expense of ignoring real history. This book would have you believe that the field of design orginated as extension of biopsychological research. The mythology might provide a useful organization for exploring design, but it should be acknowledged as an incomplete truth at best.  
 
 
-![An illustration of phrenology](https://upload.wikimedia.org/wikipedia/commons/b/b1/Phrenologie1_%2887k_edited%29.jpg "We always want explainations for things")
+<img class="pure-img" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Phrenologie1_%2887k_edited%29.jpg">
 
 We can trust the frameworks that underly many of the hard sciences because they make predictions or testable claims of some kind. As an example, Newton's laws predicted the existence of Neptune. Does cognitive pscyhology give us something similar? I haven't seen it. No principals of design in the book need the advances of cognitive psychology to explain their purpose or power. The most useful tool in discovering good design is empathy with the user.   
 

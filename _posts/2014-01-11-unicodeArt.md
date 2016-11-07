@@ -45,5 +45,5 @@ For each pixel, we get the corresponding Chinese Character and put it in a grid:
 
 This can be manually resized and rasterized. Getting the parameters correct in practice requires some trial and error:
 
-![Chinese Unicode Art]({{ site.url }}/assets/chineseCharacterTest.png)
+<img class="pure-img" src="{{ site.url }}/assets/chineseCharacterTest.png">
 
