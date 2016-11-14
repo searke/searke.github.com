@@ -1,5 +1,4 @@
--
--
+---
 layout: post
 title: An Origami Picture Frame
 excerpt: A Working Paper Picture Frame
