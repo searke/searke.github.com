@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The Method of Frobenius
+title: Some Examples of the Method of Frobenius
 excerpt: Solving Differential and Functional Equations with Infinite Series
 ---
 
@@ -9,9 +9,9 @@ excerpt: Solving Differential and Functional Equations with Infinite Series
 
 ## Motivation
 
-The method of Frobenius is a powerful tool for solving differential and functional equations. Many of the "special" functions from applied math like the Bessel or Lengendre functions are defined as a differential equation and then solved using the method. It works by assuming that the solutions are an infinite power series which reduces the problem down to algebra or solving a reccurence relation. 
+The method of Frobenius is a powerful tool for studying differential equations. Many of the "special" functions from applied math like the Bessel or Lengendre functions are defined as a differential equation and then solved using it. It works by assuming that the solutions are an infinite power series which reduces the problem down to algebra or solving a recurrence relation. 
 
-Solving the resulting algebraic equation or reccurence relation can be tedious. Fortunately, computer algebra systems make using this method less error prone and less painful.
+The method is less well known because solving the resulting algebraic equation or recurrence relation is usually very tedious. However, modern computer algebra software makes this much easier.
 
 ## Overview
 
@@ -45,9 +45,9 @@ Each coefficient of the power series must be equal to zero because the power ser
 
 $$ (i+1)\, a(i+1)\,+ a(i) = 0 $$
 
-Giving us the reccurence relation: $$ a(i+1) = - \frac{a(i)}{i+1} $$
+Giving us the recurrence relation: $$ a(i+1) = - \frac{a(i)}{i+1} $$
 
-This reccurence relation is solvable and the formula for the ith coefficient is:
+This recurrence relation is solvable and the formula for the ith coefficient is:
 
 $$ a(i) = (-1)^{i-1} \frac{-a(0)}{i!} $$
 
@@ -81,13 +81,13 @@ All the coefficients must equal zero for all \\(n\\).
 
 $$ \frac{((n+1) \bmod 2)\, (-1)^{n/2}}{n!}+(n+1)\, a(n+1)+a(n)=0 $$
 
-Solve for \\(a(n+1)\\) to get a reccurence relation.
+Solve for \\(a(n+1)\\) to get a recurrence relation.
 
 $$ a(1) = -1 $$
 
 $$ a(n+1)=\frac{-a(n)\, n!\, -i^n \,((n+1) \bmod 2)}{(n+1)\, n!} $$
 
-The reccurence relation has a closed form.
+The currence relation has a closed form.
 
 $$ a(n) = \frac{\left(\frac{1}{4}-\frac{i}{4}\right) (-1)^n
    \left(e^{-\frac{1}{2} i \pi  n}+i e^{\frac{i \pi 
@@ -148,7 +148,7 @@ $$ D(x^i) = i x^i $$
 
 $$ H(x^i) = \frac{1}{2}^i x^i $$
 
-This fact allows all the previous examples to work. If we can respresent the answer as a summation using \\(x^i\\), then we will be able to get rid of all the \\(x\\) values as we did in the example and convert the differential or functional equation into an algebra problem. 
+This fact allows all the previous examples to work. If we can represent the answer as a summation using \\(x^i\\), then we will be able to get rid of all the \\(x\\) values as we did in the example and convert the differential or functional equation into an algebra problem. 
 
 Thanks to the fact that \\(D\\) and \\(H\\) are linear, we can nest and compose them together and \\(x^i\\) will still be an eigenfunction.
 

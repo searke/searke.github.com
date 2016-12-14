@@ -2,6 +2,18 @@
 layout: page
 ---
 
+## About Me
+
+My name is Sean. My nickname is:
+
+<img class="pure-img" src="http://4.bp.blogspot.com/_nn5tlxdDx54/S5_o-oLYilI/AAAAAAAAACM/9Ahj7s6hE_Q/S1600-R/flowRoot2434.png"/>
+
+It's pronounced "Shark". It's a portmanteau of my full name. 
+
+I live in:
+
+<img class="pure-img" src="{{ site.url }}/assets/home.jpg">
+
 ## Work
 
 I work for [Wolfram Research](http://www.wolfram.com). See more about my job on [LinkedIn](http://www.linkedin.com/pub/sean-clarke/23/918/b5). I enjoy [helping](http://stackoverflow.com/users/426628/searke) [people](http://community.wolfram.com/web/seanc/home?p_p_id=user_WAR_userportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&tabs1=Discussions) with their scientific computing projects. 
@@ -27,10 +39,3 @@ The blog is being hosted on GitHub. You can see what I've written in Jekyll on m
 The font for the blog is Arvo from Google Fonts.
 
 You can still see my really old <a href="http://searke.blogspot.com/">previous blog</a>. It's kinda embarrasing but I haven't taken it down. I also used to have a xanga account as an angsty highschooler. But even I don't allow myself to read that. 
-
------
-
-## Pronouncing "Searke"
-"Searke" was a nickname I was given a long time ago. It's a portmanteau (and hence is very clever) of my first and last name and is pronounced "shark". Here's a graphic of it I made as a teenager that I was inordinately fond of:
-
-<img class="pure-img" src="http://4.bp.blogspot.com/_nn5tlxdDx54/S5_o-oLYilI/AAAAAAAAACM/9Ahj7s6hE_Q/S1600-R/flowRoot2434.png"/>

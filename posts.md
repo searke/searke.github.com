@@ -6,7 +6,7 @@ layout: page
 # Posts
 -----
 
-<ul class="posts">
+<div>
   {% for post in site.posts %}
     <section class="post">
 	<header class="post-header">
@@ -28,5 +28,4 @@ layout: page
 <br/>
 
   {% endfor %}
-</ul>
-
+</div>

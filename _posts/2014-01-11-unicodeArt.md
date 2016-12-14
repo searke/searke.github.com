@@ -25,7 +25,7 @@ For each id, we need to get an idea for how light that id's character is on a sc
         Rescale[#, {Min@#, Max@#}]&@ 
         ParallelMap[lightness, ids]
 
-Then we make a function that takes a darkness specification from 0 to 1 and returns the unicode character index of an appropiate character. There are more efficient ways of doing this of course and it doesn't need to be very precise to have the wanted effect: 
+Then we make a function that takes a darkness specification from 0 to 1 and returns the unicode character index of an appropriate character. There are more efficient ways of doing this of course and it doesn't need to be very precise to have the wanted effect: 
 
     intensityToCharacter = 
         First @*
