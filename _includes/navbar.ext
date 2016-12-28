@@ -2,8 +2,10 @@
         <div class="pure-menu pure-menu-horizontal">
             <img src="{{ site.url }}/assets/logo.svg" height="80">
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a class="pure-menu-link" href="{{ HOME_PATH }}/index.html">About</a></li>
+                <li class="pure-menu-item"><a class="pure-menu-link" href="{{ HOME_PATH }}/about.html">About Me</a></li>
                 <li class="pure-menu-item"><a class="pure-menu-link" href="{{ HOME_PATH }}/posts.html">Posts</a></li>
+		<li class="pure-menu-item"><a class="pure-menu-link" href="{{ HOME_PATH }}/otherstuff.html"> Other Stuff </a></li>
+		<li class="pure-menu-item"><a class="pure-menu-link" href="{{ HOME_PATH }}/abouttheblog.html"> About the Blog</a></li>
              </ul>
         </div>
     </div>

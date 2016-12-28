@@ -11,13 +11,13 @@ Ascii art is a popular way of recreating images out of characters. I haven't see
 
 First, we need the unicode ids of the characters we are interested in using:
 
-<code class="Mathematica">
+{% highlight mathematica %}
     characters = FromCharacterCode /@ Range[19968, 19968 + 2000]
-</code>
+{% endhighlight %}
 
 For each id, we need to get an idea for how light that id's character is on a scale from 0 to 1. First make a function that counts the number of black pixels and then apply this to all the characters and normalize the results. 
 
-<code class="Mathematica">    
+{% highlight ruby %}   
    lightness = 
         Total @*
         Flatten @*
@@ -27,7 +27,7 @@ For each id, we need to get an idea for how light that id's character is on a sc
     lightnessTable = 
         Rescale[#, {Min@#, Max@#}]&@ 
         ParallelMap[lightness, ids]
-</code>
+{% endhighlight %}
 
 Then we make a function that takes a darkness specification from 0 to 1 and returns the unicode character index of an appropriate character. There are more efficient ways of doing this of course and it doesn't need to be very precise to have the wanted effect: 
 
