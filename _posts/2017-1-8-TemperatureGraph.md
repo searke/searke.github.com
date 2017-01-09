@@ -108,7 +108,7 @@ If we plot these together, we get a good a good background for how much the temp
 {% endraw %}
 
 -----
-<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold3.png">
+<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold4.png">
 -----
 
 Let's get this years temperatures and lay it over our background:
@@ -124,7 +124,7 @@ Let's get this years temperatures and lay it over our background:
 {% endraw %}
 
 -----
-<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold4.png">
+<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold5.png">
 -----
 
 And let's lay it on top of our background:
@@ -135,15 +135,15 @@ And let's lay it on top of our background:
 ```
 
 -----
-<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold5.png">
+<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold6.png">
 -----
 
 So, it's certifiably ridiculously cold in Chicago. And the last day was almost record breaking.
 
 Here are some graphs for other cities that like to complain about the cold. As we can conclusively see, my friends from other cities should stop complaining about how cold it is outside. Chicago has it far worse right now:
 
-<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold6.png">
+<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold7.png">
 
 -----
 
-<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold7.png">
+<img class="pure-img" src="{{ site.url }}/assets/ChicagoCold8.png">
