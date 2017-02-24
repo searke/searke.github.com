@@ -1,7 +1,8 @@
 ---
 layout: page
 ---
-
+{% raw %}
+<code style="white-space:pre; font-size:0.03em; line-height:1.1; display:block">
                              ▖▖                                        
                          ▟█  ▙██▙   ▗                                  
                         ▐▛▛▞▐█████ ▟███▟▛                              
@@ -50,3 +51,5 @@ layout: page
                ▜███████████████████████████████▌                       
                ▐███████████████████████████████▌                       
                ▐█████                    ▜█████▘
+
+{% endraw %}
