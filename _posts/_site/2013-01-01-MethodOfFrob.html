@@ -3,9 +3,9 @@
 
 <h2 id="motivation">Motivation</h2>
 
-<p>The method of Frobenius is a powerful tool for solving differential and functional equations. Many of the “special” functions from applied math like the Bessel or Lengendre functions are defined as a differential equation and then solved using the method. It works by assuming that the solutions are an infinite power series which reduces the problem down to algebra or solving a reccurence relation.</p>
+<p>The method of Frobenius is a powerful tool for studying differential equations. Many of the “special” functions from applied math like the Bessel or Lengendre functions are defined as a differential equation and then solved using it. It works by assuming that the solutions are an infinite power series which reduces the problem down to algebra or solving a recurrence relation.</p>
 
-<p>Solving the resulting algebraic equation or reccurence relation can be tedious. Fortunately, computer algebra systems make using this method less error prone and less painful.</p>
+<p>The method is less well known because solving the resulting algebraic equation or recurrence relation is usually very tedious. However, modern computer algebra software makes this much easier.</p>
 
 <h2 id="overview">Overview</h2>
 
@@ -39,9 +39,9 @@
 
 <script type="math/tex; mode=display">(i+1)\, a(i+1)\,+ a(i) = 0</script>
 
-<p>Giving us the reccurence relation: <script type="math/tex">a(i+1) = - \frac{a(i)}{i+1}</script></p>
+<p>Giving us the recurrence relation: <script type="math/tex">a(i+1) = - \frac{a(i)}{i+1}</script></p>
 
-<p>This reccurence relation is solvable and the formula for the ith coefficient is:</p>
+<p>This recurrence relation is solvable and the formula for the ith coefficient is:</p>
 
 <script type="math/tex; mode=display">a(i) = (-1)^{i-1} \frac{-a(0)}{i!}</script>
 
@@ -75,13 +75,13 @@
 
 <script type="math/tex; mode=display">\frac{((n+1) \bmod 2)\, (-1)^{n/2}}{n!}+(n+1)\, a(n+1)+a(n)=0</script>
 
-<p>Solve for \(a(n+1)\) to get a reccurence relation.</p>
+<p>Solve for \(a(n+1)\) to get a recurrence relation.</p>
 
 <script type="math/tex; mode=display">a(1) = -1</script>
 
 <script type="math/tex; mode=display">a(n+1)=\frac{-a(n)\, n!\, -i^n \,((n+1) \bmod 2)}{(n+1)\, n!}</script>
 
-<p>The reccurence relation has a closed form.</p>
+<p>The currence relation has a closed form.</p>
 
 <script type="math/tex; mode=display">a(n) = \frac{\left(\frac{1}{4}-\frac{i}{4}\right) (-1)^n
    \left(e^{-\frac{1}{2} i \pi  n}+i e^{\frac{i \pi 
@@ -141,7 +141,7 @@
 
 <script type="math/tex; mode=display">H(x^i) = \frac{1}{2}^i x^i</script>
 
-<p>This fact allows all the previous examples to work. If we can respresent the answer as a summation using \(x^i\), then we will be able to get rid of all the \(x\) values as we did in the example and convert the differential or functional equation into an algebra problem.</p>
+<p>This fact allows all the previous examples to work. If we can represent the answer as a summation using \(x^i\), then we will be able to get rid of all the \(x\) values as we did in the example and convert the differential or functional equation into an algebra problem.</p>
 
 <p>Thanks to the fact that \(D\) and \(H\) are linear, we can nest and compose them together and \(x^i\) will still be an eigenfunction.</p>
 

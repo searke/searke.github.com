@@ -2,9 +2,9 @@
 
 <hr />
 
-<p>Symbolic methods have as many surprises and pitfalls as numerical methods. Unfortunately, this area receives less attention. I hope to cover several common mistakes in this blog.</p>
+<p>Although numerical computing has a big reputation for creating unintuitive failures, symbolic computing is probably just as bad. Unfortunately, symbolic computing receives less attention and many people incorrectly seek it as a refuge from numerical computing’s convoluted nuances. I hope to cover several common mistakes in this blog.</p>
 
-<p>The most common confusion I see is with <a href="https://en.wikipedia.org/wiki/Principal_branch">functions that have branches</a>. These are functions (often inverse functions) that could have multiple output values. As an example, consider the square root function. We could say that \(\sqrt{4}\) is either 2 or -2. There are two “branches” that we could choose here. We normally choose it to mean the positive branch (+2), but in some cases it may be helpful to interpret it as (-2). This is a serious ambiguity.</p>
+<p>By far, the most common mistake made is failing to understand <a href="https://en.wikipedia.org/wiki/Principal_branch">functions with branche cuts</a>. These are functions (often inverse functions) that could have multiple output values. As an example, consider the square root function. We could say that \(\sqrt{4}\) is either 2 or -2. There are two “branches” that we could choose here. We normally choose it to mean the positive branch (+2), but in some cases it may be helpful to interpret it as (-2). This is a serious ambiguity.</p>
 
 <p>Inverse trigonometric functions are especially troublesome - they have many branchs to choose from. The Sine function is equal to zero for an infinitely many values.</p>
 
@@ -14,11 +14,11 @@
 
 <p>The correct choice of which branch to take is often just not even encoded in the equation. It’s implicit - not explicit. Without this information, symbolic solvers have to choose a branch cut to take. Even more frustrating, sometimes different solvers or books don’t even agree on which branch to take.</p>
 
-<h2 id="a-basic-algebra-identity-that-doesnt-hold">A Basic Algebra Identity That Doesn’t Hold</h2>
+<h2 id="a-basic-algebra-identity-that-doesnt-seem-to-hold">A Basic Algebra Identity That Doesn’t Seem to Hold</h2>
 
 <hr />
 
-<p>Everyone knows how to use powers with fractions:</p>
+<p>Here is a common identity about how exponents and fractions are related:</p>
 
 <script type="math/tex; mode=display">(\frac{a}{b})^n = \frac{a^n}{b^n}</script>
 
