@@ -23,11 +23,11 @@ Liu Cixin - The Three Body Problem
 -----
 
 [Maybe Just Don't Drink Coffee](https://www.eater.com/2016/6/8/11883828/dont-drink-coffee-single-origin-beans-aeropress-starbucks)
- > 
+ 
  > Hilarious. This is why I find most foodie related things to be oppressive and just silently avoid them.
 
 [This Product Prioritization System Nabbed Pandora 70 Million Monthly Users with Just 40 Engineers](http://firstround.com/review/This-Product-Prioritization-System-Nabbed-Pandora-More-Than-70-Million-Active-Monthly-Users-with-Just-40-Engineers/)
- > 
+
  > I should probably have a separate section for click-baity works with embarrassing titles. The substance of the paper is that Pandora chose to use a market/voting system of sorts to prioritize features. I wish kind of thinking were more common. It makes me wish I had more time to study voting system, public choice, and the like. 
 
 [Teller Reveals His Secrets](http://www.smithsonianmag.com/arts-culture/teller-reveals-his-secrets-100744801) 
