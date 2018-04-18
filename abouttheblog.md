@@ -12,4 +12,4 @@ The blog is being hosted on GitHub. You can see what I've written in Jekyll on m
 
 The font for the blog is Arvo from Google Fonts.
 
-You can still see my really old <a href="http://searke.blogspot.com/">previous blog</a>. It's kinda embarrasing but I haven't taken it down. I also used to have a xanga account as an angsty highschooler. But even I don't allow myself to read that. 
+You can still see my really old <a href="http://searke.blogspot.com/">blog from when I was a teenager</a>. It's kinda embarrasing but I haven't taken it down. I also used to have a xanga account as an angsty highschooler. But even I don't allow myself to read that. 
