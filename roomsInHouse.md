@@ -8,11 +8,11 @@ This started out as a game my friends and I would play at art galleries. We'd di
 
 ---
 
- * A cavernous, brightly lit room lit by a slowly rotating monochromatic light where the complete discography of Radiohead is played slowed down 10x. 
+ * A cavernous, brightly lit room lit by a slowly rotating monochromatic light where the complete discography of [Radiohead is played slowed down 10x](https://www.youtube.com/watch?v=XiKWfcy-Z70). 
 
 ---
 
-* A enormous library for the history of naval warfare. I have no interest in this subject at all, but there are a lot of paintings that I want and I have no idea where I'd put them if I didn't have this room. 
+* A enormous library for the history of naval warfare. I have no interest in this subject at all, but you'd be amazed at how many nice paintings there are that really just don't belong anywhere except in this particular room. 
 
 ---
 
@@ -20,11 +20,11 @@ This started out as a game my friends and I would play at art galleries. We'd di
 
 ---
 
- * A giant closet containing a copy of every t-shirt I've ever loved. An emergency supply of bulk tissues and dark chocolate is stored on site in case I get teary-eyed from the overwhelming nostalgia. 
+ * A giant closet containing a copy of every t-shirt I have ever loved. An emergency supply of bulk tissues and dark chocolate is stored on site in case I get teary-eyed from the overwhelming nostalgia. 
 
 ---
 
- * The Grand Canyon in miniature and scaled so that it is on average 6 ft deep. That is the floor of the room and everyone entering the room must sign a waiver accepting responsibility for whatever injury they might sustain walking around in it. On the far side of the mini canyon are some American-Western themed paintings that many people want to see, but are just too far. Maybe there is a way to cross the canyon? No, there is no safe way to cross the canyon. The wilderness will not be tamed so that you can treat it as a piece of art. A sign warns visitors of bears nearby and they are not sure if it literal or not. 
+ * The Grand Canyon in miniature and scaled so that it is on average 6 ft deep. That is the floor of the room and everyone entering the room must sign a liability waiver. On the far side of the mini canyon are some American-Western themed paintings that many people want to see, but are just too far out of site. Maybe there is a way to cross the canyon? No, there is no safe way to cross the canyon. The wilderness will not be tamed to be treated as a commodity or a reflection of bourgeoisie ideology. A sign warns visitors of bears nearby.
 
 ---
 
@@ -32,4 +32,10 @@ This started out as a game my friends and I would play at art galleries. We'd di
 
 ---
 
- * A hall of very many tiny mirrors and cubist portraits. 
+ * A hall of very many mirrors and cubist portraits. 
+
+---
+
+* A bathroom completely normal in every respect except that the bathtub is actually large enough for an average person to lie in comfortably. 
+
+---
