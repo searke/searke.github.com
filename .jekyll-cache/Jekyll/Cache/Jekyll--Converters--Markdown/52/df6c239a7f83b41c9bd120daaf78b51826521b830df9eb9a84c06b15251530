@@ -1,0 +1,122 @@
+I"_<h1 id="quantifying-how-awful-chicago-winters-are">Quantifying How Awful Chicago Winters Are</h1>
+<hr />
+
+<p>I’m in Chicago and this past week has been brutally cold. I decided it would be fun to see just how bad it is by visualizing this year’s temperatures against previous years. The results were good and I thought I’d share.</p>
+
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold1.jpg" /></p>
+
+<p>First, we get about 60 years of temperature data. This data has some Missing values in it, but our code will handle this problem automagically:</p>
+
+<pre><code class="language-Mathematica">	temps = WeatherData["Chicago" , "MeanTemperature", {{1950, 1, 1}, Today, "Day"},  "DateNonMetricValue"]
+</code></pre>
+
+<p>I’ve also asked for the values in Fahrenheit instead of the the default Celsius. You can just remove “DateNonMetricValue” if you don’t like that.</p>
+
+<p>Making this data into a DataSet will help us efficiently manipulate it. We want to group all the temperatures by Month and Day so we can calculate things like the Mean and Max temperatures for any given day of the year.</p>
+
+<pre><code class="language-Mathematica">	tempDataset = Dataset@Normal@temps;
+
+	groupedByMonthDay = 
+    		tempDataset[GroupBy[First /* (DateValue[#, { "Month", "Day"}] &amp;)]]
+</code></pre>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold2.png" />
+—–</p>
+
+<p>Let’s select just the list of temperatures for each Day:</p>
+
+<pre><code class="language-Mathematica">	groupedByMonthDayTemps = groupedByMonthDay[All, All, 2]
+</code></pre>
+
+<p>Now we can look at the Mean temperature for each day by evaluating:</p>
+
+<pre><code class="language-Mathematica">	groupedByMonthDayTemps[All, Mean]
+</code></pre>
+
+<p>We are going to reduce the list temperatures for each day with several different ways, so let’s make a function out this. It will take a reducing function like Mean and apply it to each day’s list of temperatures.</p>
+
+<pre><code class="language-Mathematica">	tempsReducedBy[transform_] := groupedByMonthDayTemps[All, transform];
+</code></pre>
+
+<p>I want to look at the median temperatures as well as the minimum, maximum, and upper and lower quartiles. The functions that do this are:</p>
+
+<pre><code class="language-Mathematica">	reductionFunctions =  {Min, Max, Median, Quantile[#, 3/4] &amp;, Quantile[#, 1/4] &amp;};
+</code></pre>
+<p>We can get the daily minimum temperatures and other values using them:</p>
+
+<pre><code class="language-Mathematica"> 	{minTemps, maxTemps, medianTemps, upperQTemps, lowerQTemps} = 
+      		tempsReducedBy /@ reductionFunctions
+</code></pre>
+
+<p>Unfortunately, when we plot these, we see they are kinda bumpy:</p>
+
+<pre><code class="language-Mathematica">	ListPlot@minTemps[Values]
+</code></pre>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold3.png" />
+—–</p>
+
+<p>We just just want a general curve showing what the minimum temperatures are like. We need to smooth these out. There’s a lot of ways to do this. I at first chose to use the Fourier Transform myself, but realized there’s a function for LowPass Filtering:</p>
+
+<pre><code class="language-Mathematica">	filterTemps[temps_] := 
+ 		LowpassFilter[Normal@temps[[Values]], 1/20, 80, HammingWindow, Padding -&gt; "Periodic"]
+</code></pre>
+
+<p>The values here are admittedly just magic numbers I’ve picked for aesthetic reasons. Let’s add this to our code:</p>
+
+<pre><code class="language-Mathematica">	{minTemps, maxTemps, medianTemps, upperQTemps, lowerQTemps} = 
+  		Map[filterTemps@*tempsReducedBy, reductionFunctions];
+</code></pre>
+
+<p>If we plot these together, we get a good a good background for how much the temperature varies throughout the year. The code is a bit long because I got picky about how I wanted it to look:</p>
+
+<pre><code class="language-Mathematica">	background = DateListPlot[{
+   		Callout[minTemps, "Likely Record Low"],
+   		Callout[maxTemps, "Likely Record High"],
+   		Callout[medianTemps, "Median"],
+   		Callout[upperQTemps, "Upper Quartile"],
+   		Callout[lowerQTemps, "Lower Quartile"]}, {{2016, 1, 1}, Automatic,  "Day"}, 
+    		Joined -&gt; True, PlotStyle -&gt; Gray, FrameLabel -&gt; Automatic,
+   		FrameTicks -&gt; {Table[{2016, i, 1}, {i, 12}], Automatic}, 
+  		Axes -&gt; False]
+</code></pre>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold4.png" />
+—–</p>
+
+<p>Let’s get this years temperatures and lay it over our background:</p>
+
+<pre><code class="language-Mathematica">	currentTemps = 
+    		WeatherData[city, "MeanTemperature", {{2016, 1, 1}, Today, "Day"}, "DateNonMetricValue"];
+
+	thisYear = 
+		DateListPlot[currentTemps, Joined -&gt; True, PlotStyle -&gt; Darker@Red]
+</code></pre>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold5.png" />
+—–</p>
+
+<p>And let’s lay it on top of our background:</p>
+
+<pre><code class="language-Mathematica">	Show[background, thisYear, 
+		PlotLabel -&gt; Style["Daily Mean Temperature - Chicago - 2016", Large, FontFamily -&gt; "Times"]]
+</code></pre>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold6.png" />
+—–</p>
+
+<p>So, it’s certifiably ridiculously cold in Chicago. And the last day was almost record breaking.</p>
+
+<p>Here are some graphs for other cities that like to complain about the cold. As we can conclusively see, my friends from other cities should stop complaining about how cold it is outside. Chicago has it far worse right now:</p>
+
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold7.png" /></p>
+
+<hr />
+
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold8.png" /></p>
+:ET
