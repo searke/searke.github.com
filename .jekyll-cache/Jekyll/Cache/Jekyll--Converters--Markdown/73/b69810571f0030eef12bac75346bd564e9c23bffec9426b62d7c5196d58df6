@@ -1,0 +1,111 @@
+I"nB<h1 id="quantifying-how-awful-chicago-winters-are">Quantifying How Awful Chicago Winters Are</h1>
+<hr />
+
+<p>I’m in Chicago and this past week has been brutally cold. I decided it would be fun to see just how bad it is by visualizing this year’s temperatures against previous years. The results were good and I thought I’d share.</p>
+
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold1.jpg" /></p>
+
+<p>First, we get about 60 years of temperature data. This data has some Missing values in it, but our code will handle this problem automagically:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">temps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">WeatherData</span><span class="p">[</span><span class="s">"Chicago"</span><span class="w"> </span><span class="o">,</span><span class="w"> </span><span class="s">"MeanTemperature"</span><span class="o">,</span><span class="w"> </span><span class="p">{{</span><span class="m">1950</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="p">}</span><span class="o">,</span><span class="w"> </span><span class="nb">Today</span><span class="o">,</span><span class="w"> </span><span class="s">"Day"</span><span class="p">}</span><span class="o">,</span><span class="s">"DateNonMetricValue"</span><span class="p">]</span></code></pre></figure>
+
+<p>I’ve also asked for the values in Fahrenheit instead of the the default Celsius. You can just remove “DateNonMetricValue” if you don’t like that.</p>
+
+<p>Making this data into a DataSet will help us efficiently manipulate it. We want to group all the temperatures by Month and Day so we can calculate things like the Mean and Max temperatures for any given day of the year.</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">tempDataset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Dataset</span><span class="o">@</span><span class="nb">Normal</span><span class="o">@</span><span class="nv">temps</span><span class="o">;</span><span class="w">
+
+	</span><span class="nv">groupedByMonthDay</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+    		</span><span class="nv">tempDataset</span><span class="p">[</span><span class="nb">GroupBy</span><span class="p">[</span><span class="nb">First</span><span class="w"> </span><span class="o">/*</span><span class="w"> </span><span class="p">(</span><span class="nb">DateValue</span><span class="p">[</span><span class="nf">#</span><span class="o">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">"Month"</span><span class="o">,</span><span class="w"> </span><span class="s">"Day"</span><span class="p">}]</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)]]</span></code></pre></figure>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold2.png" />
+—–</p>
+
+<p>Let’s select just the list of temperatures for each Day:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">groupedByMonthDayTemps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">groupedByMonthDay</span><span class="p">[</span><span class="nb">All</span><span class="o">,</span><span class="w"> </span><span class="nb">All</span><span class="o">,</span><span class="w"> </span><span class="m">2</span><span class="p">]</span></code></pre></figure>
+
+<p>Now we can look at the Mean temperature for each day by evaluating:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">groupedByMonthDayTemps</span><span class="p">[</span><span class="nb">All</span><span class="o">,</span><span class="w"> </span><span class="nb">Mean</span><span class="p">]</span></code></pre></figure>
+
+<p>We are going to reduce the list temperatures for each day with several different ways, so let’s make a function out this. It will take a reducing function like Mean and apply it to each day’s list of temperatures.</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">tempsReducedBy</span><span class="p">[</span><span class="nv">transform</span><span class="o">_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nv">groupedByMonthDayTemps</span><span class="p">[</span><span class="nb">All</span><span class="o">,</span><span class="w"> </span><span class="nv">transform</span><span class="p">]</span><span class="o">;</span></code></pre></figure>
+
+<p>I want to look at the median temperatures as well as the minimum, maximum, and upper and lower quartiles. The functions that do this are:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">reductionFunctions</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="p">{</span><span class="nb">Min</span><span class="o">,</span><span class="w"> </span><span class="nb">Max</span><span class="o">,</span><span class="w"> </span><span class="nb">Median</span><span class="o">,</span><span class="w"> </span><span class="nb">Quantile</span><span class="p">[</span><span class="nf">#</span><span class="o">,</span><span class="w"> </span><span class="m">3</span><span class="o">/</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;,</span><span class="w"> </span><span class="nb">Quantile</span><span class="p">[</span><span class="nf">#</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="m">4</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="p">}</span><span class="o">;</span></code></pre></figure>
+
+<p>We can get the daily minimum temperatures and other values using them:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w"> 	</span><span class="p">{</span><span class="nv">minTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">maxTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">medianTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">upperQTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">lowerQTemps</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+      		</span><span class="nv">tempsReducedBy</span><span class="w"> </span><span class="o">/@</span><span class="w"> </span><span class="nv">reductionFunctions</span><span class="w">
+			  </span></code></pre></figure>
+
+<p>Unfortunately, when we plot these, we see they are kinda bumpy:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nb">ListPlot</span><span class="o">@</span><span class="nv">minTemps</span><span class="p">[</span><span class="nb">Values</span><span class="p">]</span></code></pre></figure>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold3.png" />
+—–</p>
+
+<p>We just just want a general curve showing what the minimum temperatures are like. We need to smooth these out. There’s a lot of ways to do this. I at first chose to use the Fourier Transform myself, but realized there’s a function for LowPass Filtering:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">filterTemps</span><span class="p">[</span><span class="nv">temps</span><span class="o">_</span><span class="p">]</span><span class="w"> </span><span class="o">:=</span><span class="w"> 
+ 		</span><span class="nb">LowpassFilter</span><span class="p">[</span><span class="nb">Normal</span><span class="o">@</span><span class="nv">temps</span><span class="p">[[</span><span class="nb">Values</span><span class="p">]]</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="o">/</span><span class="m">20</span><span class="o">,</span><span class="w"> </span><span class="m">80</span><span class="o">,</span><span class="w"> </span><span class="nb">HammingWindow</span><span class="o">,</span><span class="w"> </span><span class="nb">Padding</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Periodic"</span><span class="p">]</span></code></pre></figure>
+
+<p>The values here are admittedly just magic numbers I’ve picked for aesthetic reasons. Let’s add this to our code:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="p">{</span><span class="nv">minTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">maxTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">medianTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">upperQTemps</span><span class="o">,</span><span class="w"> </span><span class="nv">lowerQTemps</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+  		</span><span class="nb">Map</span><span class="p">[</span><span class="nv">filterTemps</span><span class="o">@*</span><span class="nv">tempsReducedBy</span><span class="o">,</span><span class="w"> </span><span class="nv">reductionFunctions</span><span class="p">]</span><span class="o">;</span></code></pre></figure>
+
+<p>If we plot these together, we get a good a good background for how much the temperature varies throughout the year. The code is a bit long because I got picky about how I wanted it to look:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">background</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">DateListPlot</span><span class="p">[{</span><span class="w">
+   		</span><span class="nb">Callout</span><span class="p">[</span><span class="nv">minTemps</span><span class="o">,</span><span class="w"> </span><span class="s">"Likely Record Low"</span><span class="p">]</span><span class="o">,</span><span class="w">
+   		</span><span class="nb">Callout</span><span class="p">[</span><span class="nv">maxTemps</span><span class="o">,</span><span class="w"> </span><span class="s">"Likely Record High"</span><span class="p">]</span><span class="o">,</span><span class="w">
+   		</span><span class="nb">Callout</span><span class="p">[</span><span class="nv">medianTemps</span><span class="o">,</span><span class="w"> </span><span class="s">"Median"</span><span class="p">]</span><span class="o">,</span><span class="w">
+   		</span><span class="nb">Callout</span><span class="p">[</span><span class="nv">upperQTemps</span><span class="o">,</span><span class="w"> </span><span class="s">"Upper Quartile"</span><span class="p">]</span><span class="o">,</span><span class="w">
+   		</span><span class="nb">Callout</span><span class="p">[</span><span class="nv">lowerQTemps</span><span class="o">,</span><span class="w"> </span><span class="s">"Lower Quartile"</span><span class="p">]}</span><span class="o">,</span><span class="w"> </span><span class="p">{{</span><span class="m">2016</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="p">}</span><span class="o">,</span><span class="w"> </span><span class="nb">Automatic</span><span class="o">,</span><span class="w">  </span><span class="s">"Day"</span><span class="p">}</span><span class="o">,</span><span class="w"> 
+    		</span><span class="nb">Joined</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">True</span><span class="o">,</span><span class="w"> </span><span class="nb">PlotStyle</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Gray</span><span class="o">,</span><span class="w"> </span><span class="nb">FrameLabel</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Automatic</span><span class="o">,</span><span class="w">
+   		</span><span class="nb">FrameTicks</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="nb">Table</span><span class="p">[{</span><span class="m">2016</span><span class="o">,</span><span class="w"> </span><span class="nv">i</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="p">}</span><span class="o">,</span><span class="w"> </span><span class="p">{</span><span class="nv">i</span><span class="o">,</span><span class="w"> </span><span class="m">12</span><span class="p">}]</span><span class="o">,</span><span class="w"> </span><span class="nb">Automatic</span><span class="p">}</span><span class="o">,</span><span class="w"> 
+  		</span><span class="nb">Axes</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">False</span><span class="p">]</span></code></pre></figure>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold4.png" />
+—–</p>
+
+<p>Let’s get this years temperatures and lay it over our background:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nv">currentTemps</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+    		</span><span class="nb">WeatherData</span><span class="p">[</span><span class="nv">city</span><span class="o">,</span><span class="w"> </span><span class="s">"MeanTemperature"</span><span class="o">,</span><span class="w"> </span><span class="p">{{</span><span class="m">2016</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="o">,</span><span class="w"> </span><span class="m">1</span><span class="p">}</span><span class="o">,</span><span class="w"> </span><span class="nb">Today</span><span class="o">,</span><span class="w"> </span><span class="s">"Day"</span><span class="p">}</span><span class="o">,</span><span class="w"> </span><span class="s">"DateNonMetricValue"</span><span class="p">]</span><span class="o">;</span><span class="w">
+
+	</span><span class="nv">thisYear</span><span class="w"> </span><span class="o">=</span><span class="w"> 
+		</span><span class="nb">DateListPlot</span><span class="p">[</span><span class="nv">currentTemps</span><span class="o">,</span><span class="w"> </span><span class="nb">Joined</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">True</span><span class="o">,</span><span class="w"> </span><span class="nb">PlotStyle</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Darker</span><span class="o">@</span><span class="nb">Red</span><span class="p">]</span></code></pre></figure>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold5.png" />
+—–</p>
+
+<p>And let’s lay it on top of our background:</p>
+
+<figure class="highlight"><pre><code class="language-wl" data-lang="wl"><span class="w">	</span><span class="nb">Show</span><span class="p">[</span><span class="nv">background</span><span class="o">,</span><span class="w"> </span><span class="nv">thisYear</span><span class="o">,</span><span class="w"> 
+		</span><span class="nb">PlotLabel</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb">Style</span><span class="p">[</span><span class="s">"Daily Mean Temperature - Chicago - 2016"</span><span class="o">,</span><span class="w"> </span><span class="nb">Large</span><span class="o">,</span><span class="w"> </span><span class="nb">FontFamily</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="s">"Times"</span><span class="p">]]</span></code></pre></figure>
+
+<hr />
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold6.png" />
+—–</p>
+
+<p>So, it’s certifiably ridiculously cold in Chicago. And the last day was almost record breaking.</p>
+
+<p>Here are some graphs for other cities that like to complain about the cold. As we can conclusively see, my friends from other cities should stop complaining about how cold it is outside. Chicago has it far worse right now:</p>
+
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold7.png" /></p>
+
+<hr />
+
+<p><img class="pure-img" src="http://localhost:4000/assets/ChicagoCold8.png" /></p>
+:ET

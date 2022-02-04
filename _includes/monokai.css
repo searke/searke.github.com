@@ -1,36 +1,3 @@
-<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.6.0/pure-min.css">
-
-<style type="text/css">
-
-@import url(monokai.css);
-
-body {
-	line-height: 1.7em;
-	font-family : 'Arvo', serif;
-	font-weight: 400;
-}
-
-.content {
-	padding: 1% 3%;
-}
-
-h1	{
-	line-height: 125%;
-}
-
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
-	font-family : 'Arvo', serif;
-}
-
-/*code, pre>code {
-    background-color: rgb(210, 210, 230);
-    border: 1px solid #C1C1C0;
-    border-radius: 1px;
-    padding: 1px;}
-*/
-
 .highlight .hll { background-color: #49483e }
 .highlight  { background: #272822; color: #f8f8f2 }
 .highlight .c { color: #75715e } /* Comment */
@@ -101,5 +68,3 @@ html, button, input, select, textarea,
 .highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .highlight .vm { color: #f8f8f2 } /* Name.Variable.Magic */
 .highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
-
-</style>
