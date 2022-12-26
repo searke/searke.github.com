@@ -11,9 +11,9 @@ Ascii art is a popular way of recreating images out of characters. I haven't see
 
 First, we need the unicode ids of the characters we are interested in using:
 
-{% highlight mathematica %}
+```Mathematica
     characters = FromCharacterCode /@ Range[19968, 19968 + 2000]
-{% endhighlight %}
+```
 
 For each id, we need to get an idea for how light that id's character is on a scale from 0 to 1. First make a function that counts the number of black pixels and then apply this to all the characters and normalize the results. 
 
