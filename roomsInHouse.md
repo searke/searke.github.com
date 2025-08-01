@@ -32,10 +32,12 @@ This started out as a game my friends and I would play at art galleries. We'd di
 
 ---
 
- * A hall of very many mirrors and cubist portraits. 
+ * A hall made confusingly of very many mirrors and cubist portraits. 
 
 ---
 
 * A bathroom completely normal in every respect except that the bathtub is actually large enough for an average person to lie in comfortably. 
 
 ---
+
+* A den in the style of an 80s blue collar Wisconsin suburban basement bar complete with with wilderness paraphenalia, dim lighting, and wood paneling. When someone compliments the sheer authenticity of its MidWestern vibe, I would reply: "Thank you, but I feel you should be aware that on the contrary, the wood paneling is made of fine Hinoki Cypress."
